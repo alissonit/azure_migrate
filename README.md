@@ -1,5 +1,5 @@
-# Example Package
+# Azure-migrate 
 
-This is a simple example package. You can use
-[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+This is a module to management Azure migrate based on REST API
+[Github-flavored Markdown](https://docs.microsoft.com/en-us/rest/api/site-recovery/).
+
