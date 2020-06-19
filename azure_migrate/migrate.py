@@ -218,15 +218,15 @@ class MigrateVmAzure(CredentialsAzure):
         return self, host, data_json
 
     @api_method("put")
-    def enable_backup(self, vm_id, vm_name, resource_group, subscription_id, backup_vault, policy):
+    def enable_backup(self, vm_id, vm_name, resource_group, resource_group_backup, subscription_id, backup_vault, policy):
         
         data_json = {
         "properties": {
             "protectedItemType": "Microsoft.Compute/virtualMachines",
             "sourceResourceId": vm_id,
-            "policyId": f"/subscriptions/{subscription_id}/resourceGroups/{resource_group}/providers/microsoft.recoveryservices/vaults/{backup_vault}/backupPolicies/{policy}"
+            "policyId": f"/subscriptions/{subscription_id}/resourceGroups/{resource_group_backup}/providers/microsoft.recoveryservices/vaults/{backup_vault}/backupPolicies/{policy}"
         }
         }
-        host = f"https://management.azure.com/subscriptions/{subscription_id}/resourceGroups/{resource_group}/providers/Microsoft.RecoveryServices/vaults/{backup_vault}/backupFabrics/Azure/protectionContainers/IaasVMContainer;iaasvmcontainerv2;{resource_group};{vm_name}/protectedItems/vm;iaasvmcontainerv2;{resource_group};{vm_name}?api-version=2019-05-13"    
+        host = f"https://management.azure.com/subscriptions/{subscription_id}/resourceGroups/{resource_group_backup}/providers/Microsoft.RecoveryServices/vaults/{backup_vault}/backupFabrics/Azure/protectionContainers/IaasVMContainer;iaasvmcontainerv2;{resource_group};{vm_name}/protectedItems/vm;iaasvmcontainerv2;{resource_group};{vm_name}?api-version=2019-05-13"    
 
         return self, host, data_json
