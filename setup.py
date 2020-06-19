@@ -11,7 +11,7 @@ setuptools.setup(
     description="A package to management migrate azure",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/alissonit/azure_migrate",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
