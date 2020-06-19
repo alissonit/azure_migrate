@@ -2,8 +2,6 @@ from .credentials import CredentialsAzure
 import requests
 import json
 import urllib3
-
-from easy_openshift import openshift
 '''
 :copyright: (c) 2020 by Alisson Castro.
 :email: alissoncastroskt@gmail.com
